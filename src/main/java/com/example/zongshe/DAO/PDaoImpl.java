@@ -1,11 +1,15 @@
 package com.example.zongshe.DAO;
 
+import com.example.zongshe.entity.Bed;
 import com.example.zongshe.entity.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class PDaoImpl implements PDao {
@@ -56,6 +60,13 @@ public class PDaoImpl implements PDao {
             e.printStackTrace();
             return null;
         }
+    }
+
+    @Override
+    public List<Bed> getAllBed() {
+        String sql="select * from bed where inuse=true";
+        List<Bed> ls=jdbcTemplate.query(sql, new BeanPropertyRowMapper<Bed>(Bed.class));
+        return ls;
     }
 
     @Override

@@ -249,6 +249,12 @@
                     }
                 }
             });
+            $.get({
+                url: "./bed",
+                success:function (result){
+                    console.log(JSON.parse(result))
+                }
+            })
         }
         var time=document.querySelector('.msg .figure .time');
         var now=new Date();

@@ -1,6 +1,7 @@
 package com.example.zongshe.service;
 
 import com.example.zongshe.DAO.PDaoImpl;
+import com.example.zongshe.entity.Bed;
 import com.example.zongshe.entity.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -49,5 +50,8 @@ public class LoginService {
         li.add(P.getOutToday());
         li.add(bednum-i);
         return li;
+    }
+    public List<Bed> getBed(){
+        return P.getAllBed();
     }
 }

@@ -71,9 +71,17 @@ public class UserController {
     }
     @GetMapping("/usertable/bedinfo")
     public void bedInfo(HttpServletResponse response){
-        List<Integer> li=loginService.getBedInfo();
         try {
-            response.getWriter().print(objectMapper.writeValueAsString(li));
+            response.getWriter().print(objectMapper.writeValueAsString(loginService.getBedInfo()));
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+    @GetMapping("/usertable/bed")
+    public void bed(HttpServletResponse response){
+        try {
+            response.setContentType("text/html;charset=utf-8");
+            response.getWriter().print(objectMapper.writeValueAsString(loginService.getBed()));
         } catch (IOException e) {
             e.printStackTrace();
         }
