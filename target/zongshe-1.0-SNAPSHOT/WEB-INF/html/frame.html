@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>医疗管理系统</title>
+    <link rel="stylesheet" href="./css/frame.css">
+</head>
+<body>
+    <div class="sidebar">
+        <div class="building"></div>
+        <div class="selector"></div>
+        <div class="home" onclick="changeH()"><a href="./usertable/main" target="show"></a></div>
+        <div class="view" onclick="changeV()"><a href="./usertable/personal" target="show"></a></div>
+        <div class="btblock">
+            <hr/>
+            <div class="tools" onclick="openT()"></div>
+            <a href="./logout"><div class="exit"></div></a>
+        </div>
+    </div>
+    <div class="toolstable">
+        <div class="table">
+            <span class="quit" onclick="closeT()">quit</span>
+            <div class="content">
+                咕咕咕~
+            </div>
+        </div>
+    </div>
+    <div class="lang">
+        <div class="icon" onclick="changeL()"></div>
+        <ul>
+            <li onclick="changeCN()">简体中文</li>
+            <li onclick="changeEN()">English</li>
+        </ul>
+    </div>
+    <iframe src="./usertable/main" frameborder="0" scrolling="no" id="show" name="show"></iframe>
+    <script src="./js/frame.js"></script>
+</body>
+</html>

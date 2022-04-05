@@ -1,0 +1,511 @@
+body{
+    background-color: rgba(237, 239, 247, 1);
+    user-select: none;
+}
+div.mpart{
+    margin-left: 7%;
+    width: 91%;
+}
+div.search{
+    margin-top: 1.8%;
+    height: 50px;
+}
+#sel{
+    padding: 0;
+    height: 100%;
+    width: 38%;
+    color: rgba(166, 166, 166, 1);
+    font-size: 20px;
+    line-height: 50px;
+    text-indent: 14%;
+}
+#sel span.arrow{
+    position: absolute;
+    top: 50px;
+    left: 44px;
+    width: 90px;
+    height: 40px;
+    background-image: url(../img/personalicons.png);
+    background-position: 670px -40px;
+    zoom: 36%;
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+}
+div.list{
+    margin-top: 20px;
+    position: relative;
+    overflow: auto;
+    z-index: 1500;
+    height: fit-content;
+    max-height: 0;
+    width: 38%;
+    border-radius: 20px;
+    background-color:white;
+    transition: all 0.3s ease;
+}
+div.list::-webkit-scrollbar {
+    width: 10px;
+}
+
+div.list::-webkit-scrollbar-track{
+    background-color: rgba(194, 194, 194, 0.3);
+    border-radius: 10px;
+}
+
+div.list::-webkit-scrollbar-thumb {
+    background-color:rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+div.list ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-align: center;
+    font-size: 20px;
+}
+div.list li{
+    font-family: 幼圆;
+    line-height: 40px;
+    height: 40px;
+    transition: all 0.3s ease;
+}
+div.list li:hover{
+    background-color:rgba(194, 194, 194, 0.3);
+}
+#sel option{
+    border-radius: 5px;
+    /* -webkit-box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2); */
+    /* background: rgba(0, 0, 0, 0.2); */
+    border-radius: 20px;
+}
+div.contentA{
+    position: relative;
+    margin-top: 2.8%;
+    height: 372px;
+}
+div.contentB{
+    position: relative;
+    margin-top: 2.4%;
+    height: 248px;
+}
+.flo{
+    position: relative;
+    border-radius: 50px;
+    background-color: rgba(255, 255, 255, 1);
+    box-shadow:2px 2px 3px 0 #a7a7a7b9;
+    transition: all 0.3s ease;
+}
+.flo:hover{
+    transform: scale(1.03,1.03);
+    box-shadow: 0 10px 20px 0 #a7a7a7b9;
+}
+span.tag{
+    position: absolute;
+    height: 50px;
+    width: 130px;
+    border-bottom-right-radius: 80px;
+    background: linear-gradient(180deg, rgba(194, 233, 251, 1) 0%,rgba(161, 196, 253, 1)  100%);
+    line-height: 50px;
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 8px;
+}
+div.body{
+    display: inline-block;
+    width: 38%;
+    height: 100%;
+}
+.body .inner{
+    position: absolute;
+    bottom: 3%;
+    width: 100%;
+    height: 80%;
+}
+.inner .figure{
+    position: absolute;
+    left: -260px;
+    top: 520px;
+    width: 1600px;
+    height: 31%;
+    background-image: url(../img/personalicons.png);
+    background-position: 0 550px;
+    zoom: 18%;
+    transform: rotate(90deg);
+}
+.inner .ins{
+    vertical-align: top;
+    position: relative;
+    z-index: 500;
+    display: inline-block;
+    margin-left: 30%;
+    width: 26%;
+    height: 100%;
+    /* background-color: aqua; */
+}
+.ins .tem .stick{
+    margin-top:60px;
+    position: relative;
+    right: 30px;
+    width: 700px;
+    height: 160px;
+    background-image: url(../img/personalicons.png);
+    background-position: -1660px 520px;
+    zoom: 18%;
+}
+.ins .tem .icon{
+    position: relative;
+    margin: 80px auto;
+    width: 440px;
+    height: 440px;
+    background-image: url(../img/personalicons.png);
+    background-position: -1160px 0;
+    zoom: 10%;
+}
+.ins .tem .text{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+.ins .oxy .stick{
+    margin-top:180px;
+    position: relative;
+    right: 40px;
+    width: 700px;
+    height: 160px;
+    background-image: url(../img/personalicons.png);
+    background-position: -1660px 260px;
+    zoom: 18%;
+}
+.ins .oxy .icon{
+    position: relative;
+    margin: 40px auto;
+    width: 220px;
+    height: 220px;
+    background-image: url(../img/personalicons.png);
+    background-position: 306px -20px;
+    zoom: 20%;
+}
+.ins .oxy .text{
+    display: block;
+    text-align: center;
+    font-weight: bold;
+}
+.inner .table{
+    position: relative;
+    z-index: 500;
+    display: inline-block;
+    width: 30%;
+    height: 100%;
+}
+.table svg{
+    width:200px;
+    height:200px;
+    margin: 10px 0;
+    margin-left: 10%;
+    zoom: 64%;
+    border-radius:100px;
+    box-shadow: 0px 2px 10px 10px rgba(107, 107, 107, 0.28);
+    transition: transform,box-shadow,0.3s ease;
+}
+.table svg:hover{
+    transform: scale(1.1,1.1);
+    box-shadow: 0px 2px 14px 12px rgba(133, 132, 132, 0.158);
+}
+div.arr{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 58%;
+    height: 100%;
+}
+.arr .headcon{
+    float: left;
+    width: 32%;
+    height: 100%;
+}
+.arr .headcon .date{
+    float: right;
+    line-height: 120px;
+    font-style: italic;
+    font-weight: bold;
+    color: rgba(128, 128, 128, 1);
+}
+.arr .headcon span{
+    float: right;
+    width: 90px;
+    height: 90px;
+    background-image: url(../img/personalicons.png);
+    zoom: 20%;
+    transition: transform 0.3s ease;
+}
+.arr .headcon span:hover{
+    transform: scale(1.1,1.1);
+}
+.arr .headcon .pre{
+    margin: 250px 60px;
+    background-position: -8px -370px;
+}
+.arr .headcon .next{
+    margin: 250px 120px;
+    margin-left: -30px;
+    background-position: -110px -370px;
+}
+.arr .daycho{
+    margin-top: 2%;
+    margin-bottom: 1%;
+    height: 24%;
+}
+.daycho .day{
+    float: right;
+    width: 68%;
+}
+.daycho .day ul{
+    padding: 0;
+}
+.daycho .day ul li{
+    display: inline-block;
+    list-style: none;
+    width: 7%;
+    height: 60px;
+    border-radius: 50px;
+    margin-left: 4%;
+    transition: all 0.3s ease;
+}
+.daycho .day ul li:hover{
+    transform: scale(1.1,1.1);
+}
+.daycho .day ul li.n{
+    background-color: rgba(255, 195, 0, 1);
+}
+.daycho .day ul li.n span{
+    color: rgba(255, 255, 255, 1);
+}
+.daycho .day ul li span{
+    margin: 6px 0px;
+    text-align: center;
+    display: block;
+}
+.daycho .day ul li .week{
+    font-size: x-small;
+    color: rgba(255, 195, 0, 1);;
+}
+.daycho .day ul li .num{
+    font-size: large;
+}
+.arr .content{
+    height: 70%;
+}
+.arr .content .ablock{
+    height: 26%;
+    margin-bottom: 2.4%;
+}
+.ablock .info{
+    vertical-align: top;
+    display: inline-block;
+    width: 22%;
+    height: 100%;
+    text-align: center;
+    text-indent: 30%;
+}
+.ablock .info .time{
+    margin-top: 24px;
+    font-weight: bolder;
+    color: rgba(112, 112, 112, 1);
+}
+.ablock .info .apm{
+    font-weight: bolder;
+    color: rgba(166, 166, 166, 1);
+}
+.ablock .task{
+    display: inline-block;
+    width: 70%;
+    height: 100%;
+    border-radius: 16px;
+    transition: width 0.3s ease;
+}
+.ablock .task:hover{
+    width: 74%;
+}
+.ablock.b1 .task{
+    background-color: rgba(33, 97, 255, 0.3);
+}
+.ablock.b2 .task{
+    background-color: rgba(255, 195, 0, 0.3);
+}
+.ablock.b3 .task{
+    background-color: rgba(203, 227, 246, 1);
+}
+.ablock .task .icon{
+    float: left;
+    margin: 60px 80px;
+    width: 220px;
+    height: 220px;
+    background-image: url(../img/personalicons.png);
+    zoom: 20%;
+}
+.ablock.b1 .task .icon{
+    background-position: 280px -280px;
+}
+.ablock.b2 .task .icon{
+    background-position: 560px -270px;
+}
+.ablock.b3 .task .icon{
+    background-position: 560px -20px;
+}
+.ablock .task .text{
+    float: left;
+    margin-left: 1%;
+}
+.ablock .task .text .desc{
+    font-weight: bold;
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 3px;
+}
+.ablock .task .text .staff{
+    font-size: x-small;
+}
+.ablock .task .text .posi{
+    font-size: x-small;
+    color: rgba(112, 112, 112, 1);
+}
+.ablock .task .more{
+    float: right;
+    margin: 10px 60px;
+    width: 220px;
+    height: 180px;
+    background-image: url(../img/personalicons.png);
+    background-position: -200px -320px;
+    zoom: 20%;
+    transition: transform 0.3s ease;
+}
+.ablock .task .more:hover{
+    transform: scale(1.2,1.2);
+}
+div.pre{
+    display: inline-block;
+    width: 38%;
+    height: 100%;
+}
+div.pre div.graph{
+    position: absolute;
+    top: 26px;
+    left: 4%;
+    width: 92%;
+    height: 100%;
+}
+div.choose{
+    position: relative;
+    float: right;
+    z-index: 1000;
+    padding: 0;
+    margin-top: 14px;
+    margin-right: 14%;
+    height: fit-content;
+    max-height: 34px;
+    width: fit-content;
+    border-radius: 20px;
+    background-color: rgba(237, 239, 247, 1);
+    color: rgba(166, 166, 166, 0.603);
+    font-size: 16px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    line-height: 34px;
+    text-indent: 14%;
+    overflow: hidden;
+    transition: max-height 0.5s ease;
+}
+div.choose .text{
+    margin-right: 56px;
+}
+div.choose span.arrow{
+    position: absolute;
+    top: 58px;
+    right: 26px;
+    width: 90px;
+    height: 40px;
+    background-image: url(../img/personalicons.png);
+    background-position: 670px -40px;
+    zoom: 24%;
+    transform: rotate(0);
+    transition: transform 0.3s ease;
+}
+div.choose ul{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    text-indent: 0;
+}
+div.choose li{
+    font-size: small;
+    font-weight: 100;
+    color: rgba(139, 139, 139, 0.925);
+    transition: all 0.3s ease;
+}
+div.choose li:hover{
+    background-color: rgba(194, 194, 194, 0.3);
+}
+div.acthb{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 58%;
+    height: 100%;
+}
+div.act{
+    display: inline-block;
+    width: 42%;
+    height: 100%;
+}
+div.act .graph{
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    height: 100%;
+}
+div.hb{
+    display: inline-block;
+    position: absolute;
+    right: 0;
+    width: 52%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(111, 204, 247, 1) 0%,rgba(161, 196, 253, 1)  100%);
+}
+div.hb span.hbtag{
+    position: absolute;
+    top: 26px;
+    left: 46px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    font-family: 黑体;
+}
+div.hb div.data{
+    position: absolute;
+    width: 100%;
+    max-width: 400px;
+    height: 200px;
+    background-image: url(../img/personalicons.png);
+    background-position: -180px 0;
+    background-size: 1260px 700px;
+}
+div.data div{
+    position: absolute;
+    bottom: -20px;
+    left: 30px;
+    transition: transform 0.3s ease;
+}
+div.data div:hover{
+    transform: scale(1.1,1.1);
+}
+div.data span.num{
+    color: white;
+    font-size: 46px;
+    font-weight: bold;
+    margin-right: 24px;
+}
+div.data span.bpm{
+    color: rgba(255, 252, 252, 0.62);
+    font-weight: bold;
+}
