@@ -2,6 +2,7 @@ package com.example.zongshe.DAO;
 
 import com.example.zongshe.entity.Bed;
 import com.example.zongshe.entity.Doctor;
+import com.example.zongshe.entity.PatientPre;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
@@ -64,26 +65,30 @@ public class PDaoImpl implements PDao {
 
     @Override
     public List<Bed> getAllBed() {
-        String sql="select * from bed where inuse=true";
+        String sql="select * from bed where inuse=true or iodate=date_format(now(),'%Y-%m-%d')";
         List<Bed> ls=jdbcTemplate.query(sql, new BeanPropertyRowMapper<Bed>(Bed.class));
         return ls;
     }
 
     @Override
-    public int getBedinUse() {
-        String sql="select count(*) from bed where inuse=true";
-        return jdbcTemplate.queryForObject(sql, Integer.class);
+    public PatientPre getPre(int bid) {
+        String sql="select * from prelist where pbid=?";
+        PatientPre ls=jdbcTemplate.queryForObject(sql, new BeanPropertyRowMapper<PatientPre>(PatientPre.class),bid);
+        return ls;
     }
 
     @Override
-    public int getInToday() {
-        String sql="select count(*) from bed where inuse=true and iodate=date_format(now(),'%Y-%m-%d')";
-        return jdbcTemplate.queryForObject(sql, Integer.class);
+    public String getArr(int bid, String date) {
+        String sql = "select "+date+" from arrange where bid = ?";
+        String arr = jdbcTemplate.queryForObject(sql, String.class,bid);
+        return arr;
     }
 
     @Override
-    public int getOutToday() {
-        String sql="select count(*) from bed where inuse=false and iodate=date_format(now(),'%Y-%m-%d')";
-        return jdbcTemplate.queryForObject(sql, Integer.class);
+    public void setArr(int bid, String date, String data) {
+        String sql ="update arrange set "+date+"=? where bid=?";
+        Object[] args={data,bid};
+        int insert=jdbcTemplate.update(sql,args);
+        System.out.println("修改了 "+bid+" 号床病人 "+insert+"条结果："+data);
     }
 }

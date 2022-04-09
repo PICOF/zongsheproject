@@ -1,6 +1,7 @@
 package com.example.zongshe.DAO;
 
 import com.example.zongshe.entity.Bed;
+import com.example.zongshe.entity.PatientPre;
 
 import java.util.List;
 
@@ -10,7 +11,7 @@ public interface PDao {
     String findNamebyWid(String wid);
     String findWidbyName(String name);
     List<Bed> getAllBed();
-    int getBedinUse();
-    int getInToday();
-    int getOutToday();
+    PatientPre getPre(int bid);
+    String getArr(int bid,String date);
+    void setArr(int bid,String date,String data);
 }

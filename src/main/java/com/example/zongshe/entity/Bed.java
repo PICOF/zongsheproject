@@ -8,6 +8,10 @@ public class Bed {
     private int oxygen;
     private int hb;
     private float pre;
+    private boolean inuse;
+    private String status;
+    private int arr;
+    private int surgery;
     private String drid;
 
     public int getBid() {
@@ -72,5 +76,37 @@ public class Bed {
 
     public void setDrid(String drid) {
         this.drid = drid;
+    }
+
+    public boolean isInuse() {
+        return inuse;
+    }
+
+    public void setInuse(boolean inuse) {
+        this.inuse = inuse;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public int getSurgery() {
+        return surgery;
+    }
+
+    public void setSurgery(int surgery) {
+        this.surgery = surgery;
+    }
+
+    public int getArr() {
+        return arr;
+    }
+
+    public void setArr(int arr) {
+        this.arr = arr;
     }
 }

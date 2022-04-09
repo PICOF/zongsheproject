@@ -1,8 +1,5 @@
 var pregraph=echarts.init(document.querySelector('.pre .graph'));
-var data=[6, 32, 70, 86, 68.7, 100.7, 125.6, 112.2, 78.7, 48.8, 36.0, 19.3];
-for(var i=0;i<data.length;i++){
-    data[i]=data[i].toFixed(2);
-}
+var data=[];
 function turn(a){
     var k=new Array();
     for(var i=0;i<a.length;i++){

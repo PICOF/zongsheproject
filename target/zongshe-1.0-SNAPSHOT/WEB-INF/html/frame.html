@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>医疗管理系统</title>
     <link rel="stylesheet" href="./css/frame.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.js"></script>
 </head>
 <body>
     <div class="sidebar">
@@ -37,5 +38,23 @@
     </div>
     <iframe src="./usertable/main" frameborder="0" scrolling="no" id="show" name="show"></iframe>
     <script src="./js/frame.js"></script>
+    <script>
+        $.get({
+            url: "./usertable/userid",
+            success:function (result){
+                localStorage.setItem('wid',result);
+            }
+        })
+        function getInfo(){
+            $.get({
+                url: "./usertable/bed",
+                success:function (result){
+                    localStorage.setItem('bed',result);
+                }
+            })
+        }
+        getInfo()
+        setInterval("getInfo()",1000)
+    </script>
 </body>
 </html>

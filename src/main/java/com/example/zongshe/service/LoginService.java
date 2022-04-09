@@ -16,8 +16,6 @@ public class LoginService {
     private PDaoImpl P;
     @Autowired
     private Doctor doctor;
-    private final Integer bednum=36;
-    @Test
     public boolean loginbyWid(String wid,String psw){
         String s=P.findDrPswbyWid(wid);
         if(s==null){
@@ -41,17 +39,5 @@ public class LoginService {
         }else {
             return false;
         }
-    }
-    public List<Integer> getBedInfo(){
-        List<Integer> li=new ArrayList<>();
-        Integer i=P.getBedinUse();
-        li.add(i);
-        li.add(P.getInToday());
-        li.add(P.getOutToday());
-        li.add(bednum-i);
-        return li;
-    }
-    public List<Bed> getBed(){
-        return P.getAllBed();
     }
 }

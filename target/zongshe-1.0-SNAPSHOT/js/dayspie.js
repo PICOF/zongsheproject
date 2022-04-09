@@ -1,6 +1,23 @@
         // 基于准备好的dom，初始化echarts实例
         var myChart = echarts.init(document.querySelector('.day .pie'));
-  
+        var info=[
+            {
+                value: 1,
+                name: '30天以上'
+            },
+            {
+                value: 32,
+                name: '20天以上'
+            },
+            {
+                value: 34,
+                name: '10天以上'
+            },
+            {
+                value: 12,
+                name: '10天以内'
+            }
+        ]
         // 指定图表的配置项和数据
         var option = {
           title: {},
@@ -12,24 +29,7 @@
                   label: {
                       show: false
                   },
-                  data: [
-                      {
-                          value: 5,
-                          name: '30天以上'
-                      },
-                      {
-                          value: 24,
-                          name: '20天以上'
-                      },
-                      {
-                          value: 44,
-                          name: '10天以上'
-                      },
-                      {
-                          value: 52,
-                          name: '10天以内'
-                      }
-                  ],
+                  data: info,
                   radius: '90px'
               }
           ]

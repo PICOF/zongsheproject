@@ -22,7 +22,7 @@
                             <div class="icon i1"></div>
                             <div class="des">
                                 <div class="name">住院患者</div>
-                                <div class="num">125</div>
+                                <div class="num">-1</div>
                             </div>
                         </div>
                     </li>
@@ -31,7 +31,7 @@
                             <div class="icon i2"></div>
                             <div class="des">
                                 <div class="name">今日入院</div>
-                                <div class="num">24</div>
+                                <div class="num">-1</div>
                             </div>
                         </div>
                     </li>
@@ -40,7 +40,7 @@
                             <div class="icon i3"></div>
                             <div class="des">
                                 <div class="name">今日出院</div>
-                                <div class="num">20</div>
+                                <div class="num">-1</div>
                             </div>
                         </div>
                     </li>
@@ -49,7 +49,7 @@
                             <div class="icon i4"></div>
                             <div class="des">
                                 <div class="name">空余床位</div>
-                                <div class="num">18</div>
+                                <div class="num">-1</div>
                             </div>
                         </div>
                     </li>
@@ -65,16 +65,16 @@
                     <div class="group">
                         <ul>
                             <li>
-                                <span class="yellow">01</span><span class="yellow">02</span><span>03</span><span>04</span><span class="yellow">05</span><span>06</span><span>07</span><span>08</span><span>09</span>
+                                <span>01</span><span>02</span><span>03</span><span>04</span><span>05</span><span>06</span><span>07</span><span>08</span><span>09</span>
                             </li>
                             <li>
-                                <span class="red">10</span><span>11</span><span class="blue">12</span><span>13</span><span>14</span><span>15</span><span class="red">16</span><span>17</span><span class="blue">18</span>
+                                <span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span>16</span><span>17</span><span>18</span>
                             </li>
                             <li>
-                                <span class="blue">19</span><span>20</span><span>21</span><span class="blue">22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
+                                <span>19</span><span>20</span><span>21</span><span>22</span><span>23</span><span>24</span><span>25</span><span>26</span><span>27</span>
                             </li>
                             <li>
-                                <span>28</span><span>29</span><span>30</span><span>31</span><span class="blue">32</span><span>33</span><span>34</span><span>35</span><span>36</span>
+                                <span>28</span><span>29</span><span>30</span><span>31</span><span>32</span><span>33</span><span>34</span><span>35</span><span>36</span>
                             </li>
                         </ul>
                     </div>
@@ -149,62 +149,17 @@
             </div>
             <div class="figure">
                 <div class="time"></div>
-                <div class="pages">
-                    <div class="page p1">
-                        <ul>
-                            <li class="red">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">07</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                            <li class="yellow">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">02</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                            <li class="blue">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">12</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                            <li class="yellow">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">19</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                            <li class="red">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">23</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                            <li class="yellow">
-                                <div class="dot"></div>
-                                <div class="context">
-                                    <span class="num">09</span><span class="icon"></span><span class="des">正在加载中，请稍等</span>
-                                </div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="page p2">
-                        
-                    </div>
-                    <div class="page p3">
-                        
-                    </div>
+                <div class="page">
+                    <ul></ul>
                 </div>
                 <div class="con">
-                    <button class="slide-left-btn material-icons">arrow_back_ios</button>
+                    <button class="slide-left-btn material-icons" onclick="preP()">arrow_back_ios</button>
                         <div class="pn">
                             <div class="choose">·</div>
                             <div>·</div>
                             <div>·</div>
                         </div>
-                    <button class="slide-right-btn material-icons">arrow_forward_ios</button>
+                    <button class="slide-right-btn material-icons" onclick="nextP()">arrow_forward_ios</button>
                 </div>
             </div>
         </div>
@@ -233,38 +188,7 @@
             </div>
         </div>
     </div>
-    <script>
-        $(document).ready(function(){
-            getInfo();
-        });
-        /*ajax同步发请求（当页面加载的时候）*/
-        function getInfo(){
-            $.get({
-                async:false, /*开启同步请求，true为异步请求*/
-                url:"./bedinfo",  /*url为发请求的url，利用Controller@RequestMapping进行拦截*/
-                success:function(result){  /*当请求成功之后回调*/
-                    var li=JSON.parse(result)
-                    for (var i=0;i<4;i++){
-                        $(".info .des .num").eq(i).html(li[i])
-                    }
-                }
-            });
-            $.get({
-                url: "./bed",
-                success:function (result){
-                    console.log(JSON.parse(result))
-                }
-            })
-        }
-        var time=document.querySelector('.msg .figure .time');
-        var now=new Date();
-        function show(){
-            time.innerHTML=now.getFullYear()+"."+(now.getMonth()+1)+"."+now.getDate();
-            now=new Date();
-        }
-        show();
-        setInterval("show()",60000);
-    </script>
     <script src="../js/dayspie.js"></script>
+    <script src="../js/maindata.js"></script>
 </body>
 </html>

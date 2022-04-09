@@ -1,5 +1,5 @@
 var actgraph=echarts.init(document.querySelector('.act .graph'));
-var actdata=[100,85,48,80,70,65,70];
+var actdata=[0,0,0,0,0,0,0];
 var actnum=((new Date).getDay()+6)%7;
 actdata[actnum]={value: actdata[actnum],itemStyle: { color: 'rgba(0, 125, 250, 0.54)',}};
 option1 = {

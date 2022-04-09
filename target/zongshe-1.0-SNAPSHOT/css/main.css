@@ -3,6 +3,9 @@ body{
     background-color: rgba(237, 239, 247, 1);
     user-select: none;
 }
+::-webkit-scrollbar {
+    display: none;
+}
 .eg{
     float: right;
 }
@@ -183,23 +186,23 @@ div.bed .figure{
     height: 220px;
     margin-left: 110px;
     zoom: 18%;
-    background: -1300px 0px;
+    background: -1300px 0;
     background-image: url(../img/icons.png);
-    transition: all 0.3s ease;
+    transition: transform 0.3s,font-size 0.3s ease;
 }
 .posi .group span:nth-child(3n+3){
     margin-right: 180px;
 }
 .posi .group span.red{
-    background: -1004px 0px;
+    background: -1004px 0;
     background-image: url(../img/icons.png);
 }
 .posi .group span.blue{
-    background: -1154px 0px;
+    background: -1154px 0;
     background-image: url(../img/icons.png);
 }
 .posi .group span.yellow{
-    background: -1442px 0px;
+    background: -1442px 0;
     background-image: url(../img/icons.png);
 }
 .posi .group span:hover{
@@ -306,6 +309,11 @@ div.task .figure li span.icon.i3{
     background: -10px 0;
     background-image: url(../img/icons.png);
 }
+.figure li .data{
+    display: inline-flex;
+    width: 160px;
+    overflow: auto;
+}
 div.data span{
     margin-left: 20px;
     transition: all 0.5s ease;
@@ -372,9 +380,6 @@ div.oper .figure li span.des{
     font-weight: 800;
     font-size: medium;
 }
-div.oper .figure li .data{
-    display: inline;
-}
 div.msg{
     position: relative;
     height: 68%;
@@ -386,7 +391,7 @@ div.msg .modelhead span{
     width: 180px;
     height: 180px;
     margin-left: 120px;
-    background: -780px 0px;
+    background: -780px 0;
     background-image: url(../img/icons.png);
     zoom: 25%;
 }
@@ -397,25 +402,29 @@ div.msg .figure{
     margin-top: 10px;
     transition: all 0.3s ease;
 }
-div.msg .figure .time{
-    float: right;
+div.msg .figure .time {
     font-family: 思源黑体;
     font-weight: 800;
     margin-top: 10px;
     margin-right: 34px;
+    position: absolute;
+    right: -2%;
 }
-div.msg .figure .pages{
-    height: 90%;
-}
-.page{
-    padding-top: 30px;
+.page {
+    position: relative;
+    top: 46px;
+    height: 83%;
+    overflow: hidden;
 }
 .page ul{
+    position: relative;
+    margin-top: 0;
     margin-right: 38px;
     list-style: none;
 }
 .page li{
     margin-bottom: 14px;
+    transition: all 0.3s ease;
 }
 .page li .dot{
     position: relative;
@@ -525,7 +534,7 @@ div.msg .figure .pages{
 }
 .con{
     position: relative;
-    top: -4px;
+    top: 26px;
     left: 1.4%;
     text-align: center;
 }
@@ -533,9 +542,8 @@ div.msg .figure .pages{
     position: relative;
     display: inline-block;
     top: -4px;
-    right: 2px;
 }
-.con div.pn div{
+.con div.pn div {
     display: inline-block;
     font-size: 20px;
     font-weight: 800;
@@ -546,7 +554,7 @@ div.msg .figure .pages{
 .con div.pn div:hover{
     transform: scale(1.4,1.4);
 }
-.con div.pn div.choose{
+.con div.pn div.choose {
     transform: scale(1.8,1.8);
     color: rgba(9, 109, 217, 1);
 }
