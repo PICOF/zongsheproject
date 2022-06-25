@@ -1,14 +1,9 @@
 package com.example.zongshe.service;
 
 import com.example.zongshe.DAO.PDaoImpl;
-import com.example.zongshe.entity.Bed;
 import com.example.zongshe.entity.Doctor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.testng.annotations.Test;
-
-import java.util.ArrayList;
-import java.util.List;
 
 @Service
 public class LoginService {

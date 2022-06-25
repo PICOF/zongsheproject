@@ -1,16 +1,15 @@
 package com.example.zongshe.DAO;
 
 import com.example.zongshe.entity.Bed;
-import com.example.zongshe.entity.Doctor;
 import com.example.zongshe.entity.PatientPre;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataAccessException;
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Random;
 
 @Repository
 public class PDaoImpl implements PDao {
@@ -67,6 +66,15 @@ public class PDaoImpl implements PDao {
     public List<Bed> getAllBed() {
         String sql="select * from bed where inuse=true or iodate=date_format(now(),'%Y-%m-%d')";
         List<Bed> ls=jdbcTemplate.query(sql, new BeanPropertyRowMapper<Bed>(Bed.class));
+        //下面这一串都是为了作假，上传时记得删除
+        Random random=new Random();
+        for (Bed b:ls) {
+            b.setHb(random.nextInt(20)+b.getHb()-10);
+            b.setOxygen(Math.min(b.getOxygen()+random.nextInt(10)-5,100));
+            b.setTem((float) Math.round((b.getTem()+random.nextFloat()*2-1)*100)/100);
+            b.setPre((float) Math.round((b.getPre()+ random.nextFloat()*10-5)*100)/100);
+            //System.out.println(b.getTem()+" "+b.getPre());
+        }
         return ls;
     }
 
