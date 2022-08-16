@@ -14,8 +14,8 @@
 
 ### 在以后
 
-- 数据传输方式考虑使用 websocket 连接代替轮询
+- 数据传输方式考虑使用 websocket 连接代替轮询 ✔
 - 监听数据库变化，减小开销
-- 将 JDBCTemplate 更换为 Mybatis
+- 将 JDBCTemplate 更换为 Mybatis ✔
 
 **已是完整版本，所有功能均已正常实现**
